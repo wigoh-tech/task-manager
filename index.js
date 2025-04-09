@@ -1,27 +1,41 @@
+const inputValue = document.getElementById("taskInput")
+const listOfTask = document.getElementById("tasklist")
 function handleSubmit() {
-    let input = document.getElementById("taskInput");
-    let inputValue = input.value;
+  const taskData = inputValue.value.trim()
+  if (taskData) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(taskData);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    addTask(taskData)
+    inputValue.value = ""
+  }
+  else {
+    alert("please enter the task!")
+  }
+}
+function handleRemove() {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  if (tasks.length > 0) {
+    tasks.pop()
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    listOfTask.removeChild(listOfTask.lastChild)
+  }
+  else {
+    alert("There is no task!")
+  }
+}
+function addTask(taskData) {
+  const art = document.createElement("p");
+  art.textContent = taskData;
+  listOfTask.appendChild(art)
 
-    if (inputValue !== "") {
-        let taskElement = document.createElement("article");
-        taskElement.classList.add("taskdata");
-        taskElement.innerHTML = inputValue;
-        let taskContainer = document.getElementById("taskContainer");
-        taskContainer.appendChild(taskElement);
-        input.value = "";
-    } else {
-        alert("Please enter a task.");
-    }
+}
+window.onload = function(){
+  const tasks = JSON.parse(localStorage.getItem("tasks"))|| [];
+  tasks.forEach(taskData => addTask(taskData))
 }
 
-function handleRemove() {
-    let taskContainer = document.getElementById("taskContainer");
-    let tasks = taskContainer.getElementsByClassName("taskdata");
-  
-    if (tasks.length > 0) {
-      taskContainer.removeChild(tasks[tasks.length - 1]);
-    } else {
-      alert("There is no task.");
-    }
-  }
-  
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}

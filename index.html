@@ -17,6 +17,10 @@
             <a href="/">About US</a>
             <a href="/">User</a>
         </nav>
+        <label class="switch">
+            <input onclick="darkMode()" type="checkbox">
+            <span class="slider round"></span>
+        </label>
     </header>
     <section class="headOfCard">
         <article class="card1">
@@ -44,8 +48,9 @@
         <article class="cardabout">
             <article class="about">
                 <span>Daily routine </span>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ut inventore, consequuntur, 
-                    fugiat accusantium officia modi vitae, debitis quasi hic tempore velit ipsa minus veritatis laboriosam eaque earum nesciunt optio.</p>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ut inventore, consequuntur,
+                    fugiat accusantium officia modi vitae, debitis quasi hic tempore velit ipsa minus veritatis
+                    laboriosam eaque earum nesciunt optio.</p>
             </article>
         </article>
         <article class="card">
@@ -62,15 +67,19 @@
         <article class="cardabout">
             <article class="about">
                 <span> About </span>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus atque sequi sunt quis nesciunt. 
-                    Temporibus tenetur sapiente veniam aperiam dolore quas perferendis eligendi illo, neque iste velit totam modi facere!</p>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus atque sequi sunt quis
+                    nesciunt.
+                    Temporibus tenetur sapiente veniam aperiam dolore quas perferendis eligendi illo, neque iste velit
+                    totam modi facere!</p>
             </article>
         </article>
     </section>
-    <section style="margin-top: 20px;">
-        <article class="data">
-            <h4 id="taskContainer"></h4>
+    <section class="taskContainer">
+        <article>
+            <ul id="tasklist"></ul>
         </article>
+    </section>
+    <section style="margin-top: 20px;">
         <section class="cards">
             <article>
                 <h4>Enter the Tasks Details</h4>
