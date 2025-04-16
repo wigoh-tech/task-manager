@@ -18,7 +18,7 @@
             <a href="/">User</a>
         </nav>
         <label class="switch">
-            <input onclick="darkMode()" type="checkbox">
+            <input onclick="darkMode()" id="darkmode" type="checkbox">
             <span class="slider round"></span>
         </label>
     </header>
@@ -77,8 +77,13 @@
     <section class="taskContainer">
         <article>
             <ul id="tasklist"></ul>
+            <ul id="tasks"></ul>
+            <ul id="health"></ul>
         </article>
     </section>
+    <article class="backend-tasks">
+        <ul id="backendTaskList"></ul>
+    </article>
     <section style="margin-top: 20px;">
         <section class="cards">
             <article>
